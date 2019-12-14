@@ -66,12 +66,6 @@ export class ChosenSpotComponent implements OnInit {
     this.initConfig();
     setTimeout(this.startMap, 2000);
 
-
-  }
-
-
-  //
-  initConfig() {
     let id = this.route.snapshot.params['id'];
     this.selectId = id;
 
@@ -81,9 +75,11 @@ export class ChosenSpotComponent implements OnInit {
       console.log(this.spotsData);
       this.spotsData = data;
     });
+  }
 
-    let chargePrice: string = this.spotsData.price;
-    
+
+  //
+  initConfig() {
     this.payPalConfig = {
       currency: 'EUR',
       clientId: 'sb',
@@ -94,11 +90,11 @@ export class ChosenSpotComponent implements OnInit {
             {
               amount: {
                 currency_code: 'EUR',
-                value: chargePrice,
+                value: '9.99',
                 breakdown: {
                   item_total: {
                     currency_code: 'EUR',
-                    value: chargePrice
+                    value: '9.99'
                   }
                 }
               },
@@ -109,7 +105,7 @@ export class ChosenSpotComponent implements OnInit {
                   category: 'DIGITAL_GOODS',
                   unit_amount: {
                     currency_code: 'EUR',
-                    value: chargePrice
+                    value: '9.99'
                   }
                 }
               ]
