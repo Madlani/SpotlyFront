@@ -1,7 +1,7 @@
 {
     "/api/*":{
     
-      "target":"https://lit-castle-94585.herokuapp.com/",
+      "target":"http://localhost:8080",
       "secure":false,
       "logLevel":"debug"
       
